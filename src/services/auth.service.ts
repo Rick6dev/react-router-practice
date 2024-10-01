@@ -1,8 +1,9 @@
-const baseUrl="https://rickandmorty.com/api"
+const baseUrl="https://pokeapi.co/api/v2/pokemon?limit=480&offset=0"
 
-const character =baseUrl +"character/"
+// const character =baseUrl +"character/"
 
 
-export const getMorty= ()=>{
-    return fetch(character+'2').then(res=>res.json())
+export const getPokemon= ()=>{
+    return fetch(baseUrl).then(res=>res.json())
 }
+

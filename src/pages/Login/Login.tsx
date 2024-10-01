@@ -1,13 +1,14 @@
 import { useDispatch } from "react-redux";
-import { getMorty } from "../../services/auth.service"
+import { getPokemon } from "../../services/auth.service"
 import { createUser } from "../../redux/state/user";
 
 const Login = () => {
     const dispath=useDispatch();
     const login=async()=>{
         try{
-        const result =await  getMorty();
-        dispath(createUser(result))
+        const result =await  getPokemon();
+        console.log(result.results[0])
+        dispath(createUser(result.results[0]))
 
         }catch(error){
             console.log("Error",error)
